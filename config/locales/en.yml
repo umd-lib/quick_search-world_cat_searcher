@@ -1,0 +1,16 @@
+# Localization
+#
+# Replace the following placeholders with the correct values for
+# your installation.
+#
+# <NO_RESULTS_LINK>: The link for your site when there are no results
+
+en:
+  world_cat_search:
+    display_name: "WorldCat"
+    short_display_name: "WorldCat"
+    search_form_placeholder: "Search WorldCat"
+    module_callout: "Search WorldCat"
+    error_service_message: "searching WorldCat"
+    no_results_service_message: "a different search from WorldCat"
+    no_results_link: "<NO_RESULTS_LINK>"
