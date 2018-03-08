@@ -1,0 +1,28 @@
+# Configuration
+#
+# Replace the following placeholders with the correct values for
+# your installation.
+#
+# <YOUR_WSKEY>: The wskey for your site
+#
+# <LOADED_LINK>: The direct link to your WorldCat site
+#
+# <URL_LINK>: The direct link for each search result page
+
+defaults: &defaults
+  base_url: "http://www.worldcat.org/webservices/catalog/search/worldcat/opensearch?count=3&wskey="
+  wskey: "<YOUR_WSKEY>"
+  loaded_link: "<LOADED_LINK>"
+  url_link: "<URL_LINK>"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
