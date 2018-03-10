@@ -1,25 +1,23 @@
 module QuickSearch
+  # QuickSearch seacher for WorldCat
   class WorldCatSearcher < QuickSearch::Searcher
-
     def search
       url = base_url + parameters.to_query
       raw_response = @http.get(url)
       @response = Nokogiri::XML(raw_response.body)
     end
 
-    def results
+    def results # rubocop:disable Metrics/MethodLength
       if results_list
         results_list
       else
         @results_list = []
         @response.xpath('//xmlns:entry').each do |value|
           result = OpenStruct.new
-
           result.title = title(value)
           result.link = link(value)
           result.author = author(value)
           result.date = updated(value)
-
           @results_list << result
         end
         @results_list
@@ -35,11 +33,9 @@ module QuickSearch
         http_request_queries['uri_escaped']
     end
 
-    private
-
     def base_url
       QuickSearch::Engine::WORLD_CAT_CONFIG['base_url'] +
-        QuickSearch::Engine::WORLD_CAT_CONFIG['wskey'] + "&"
+        QuickSearch::Engine::WORLD_CAT_CONFIG['wskey'] + '&'
     end
 
     def parameters
@@ -70,6 +66,5 @@ module QuickSearch
       d = Time.zone.parse(datetime)
       d.strftime('%Y')
     end
-
   end
 end
