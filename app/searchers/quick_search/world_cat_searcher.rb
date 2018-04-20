@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module QuickSearch
   # QuickSearch seacher for WorldCat
   class WorldCatSearcher < QuickSearch::Searcher
@@ -45,7 +47,7 @@ module QuickSearch
     end
 
     def title(value)
-      value.at('title').content if value.at('title')
+      value.at('title')&.content
     end
 
     def link(value)
