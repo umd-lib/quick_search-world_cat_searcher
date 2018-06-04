@@ -7,8 +7,8 @@
 
 en:
   world_cat_search:
-    display_name: "WorldCat"
-    short_display_name: "WorldCat"
+    display_name: "WorldCat (Search)"
+    short_display_name: "WorldCat (Search)"
     search_form_placeholder: "Search WorldCat"
     module_callout: "Search WorldCat"
     error_service_message: "searching WorldCat"
