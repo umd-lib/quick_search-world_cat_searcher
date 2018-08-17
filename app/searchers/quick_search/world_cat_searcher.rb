@@ -32,7 +32,7 @@ module QuickSearch
 
     def loaded_link
       QuickSearch::Engine::WORLD_CAT_CONFIG['loaded_link'] +
-        http_request_queries['uri_escaped']
+        sanitized_user_search_query
     end
 
     def base_url
@@ -42,8 +42,16 @@ module QuickSearch
 
     def parameters
       {
-        'q' => http_request_queries['not_escaped']
+        'q' => sanitized_user_search_query
       }
+    end
+
+    # Returns the sanitized search query entered by the user, skipping
+    # the default QuickSearch query filtering
+    def sanitized_user_search_query
+      # Need to use "to_str" as otherwise Japanese text isn't returned
+      # properly
+      sanitize(@q).to_str
     end
 
     def title(value)
