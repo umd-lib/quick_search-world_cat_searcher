@@ -2,6 +2,15 @@
 
 WorldCat searcher for NCSU Quick Search
 
+---
+
+## ARCHIVED REPOSITORY
+
+This repository has been archived, and is no longer being developed or
+maintained.
+
+---
+
 ## Installation
 
 Include the searcher gem in your Gemfile:
@@ -24,11 +33,11 @@ Include in your Search Results page
 
 ## Configuration
 
-WorldCat requires configuration, such as a key. 
-To set the configuration, create a "config/searchers/" directory in your 
-application (the "searchers" subdirectory may need to be created), and copy 
-the "config/world_cat_config.yml" file in this gem into it. Follow the 
+WorldCat requires configuration, such as a key.
+To set the configuration, create a "config/searchers/" directory in your
+application (the "searchers" subdirectory may need to be created), and copy
+the "config/world_cat_config.yml" file in this gem into it. Follow the
 instructions in the file to configure the searcher.
 
-Additional customizations can be done by editing the "config/locales/en.yml" 
+Additional customizations can be done by editing the "config/locales/en.yml"
 file.
